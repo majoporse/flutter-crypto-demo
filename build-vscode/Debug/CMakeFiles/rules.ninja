@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: native_add_library
+# Project: crypto_openssl_library
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
@@ -14,7 +14,7 @@
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__native_add_Debug
+rule C_COMPILER__crypto_openssl_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = C:\PROGRA~2\MICROS~3\2022\BUILDT~1\VC\Tools\Llvm\x64\bin\clang.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -24,7 +24,7 @@ rule C_COMPILER__native_add_Debug
 #############################################
 # Rule for linking C shared library.
 
-rule C_SHARED_LIBRARY_LINKER__native_add_Debug
+rule C_SHARED_LIBRARY_LINKER__crypto_openssl_Debug
   command = cmd.exe /C "$PRE_LINK && C:\PROGRA~2\MICROS~3\2022\BUILDT~1\VC\Tools\Llvm\x64\bin\clang.exe -fuse-ld=lld-link -nostartfiles -nostdlib $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared -o $TARGET_FILE  -Xlinker /MANIFEST:EMBED -Xlinker /implib:$TARGET_IMPLIB -Xlinker /pdb:$TARGET_PDB -Xlinker /version:0.0 $in $LINK_PATH $LINK_LIBRARIES $MANIFESTS && $POST_BUILD"
   description = Linking C shared library $TARGET_FILE
   restat = $RESTAT

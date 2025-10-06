@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: native_add_library
+# Project: crypto_openssl_library
 # Configurations: Debug
 # =============================================================================
 
@@ -41,43 +41,43 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/majop/native_add/native_add/build-vscode/Debug/
 # =============================================================================
-# Object build statements for SHARED_LIBRARY target native_add
+# Object build statements for SHARED_LIBRARY target crypto_openssl
 
 
 #############################################
-# Order-only phony target for native_add
+# Order-only phony target for crypto_openssl
 
-build cmake_object_order_depends_target_native_add: phony || CMakeFiles/native_add.dir
+build cmake_object_order_depends_target_crypto_openssl: phony || CMakeFiles/crypto_openssl.dir
 
-build CMakeFiles/native_add.dir/native_add.c.obj: C_COMPILER__native_add_Debug C$:/Users/majop/native_add/native_add/src/native_add.c || cmake_object_order_depends_target_native_add
-  DEFINES = -DDART_SHARED_LIB -Dnative_add_EXPORTS
-  DEP_FILE = CMakeFiles\native_add.dir\native_add.c.obj.d
+build CMakeFiles/crypto_openssl.dir/crypto_openssl.c.obj: C_COMPILER__crypto_openssl_Debug C$:/Users/majop/native_add/native_add/src/crypto_openssl.c || cmake_object_order_depends_target_crypto_openssl
+  DEFINES = -DDART_SHARED_LIB -Dcrypto_openssl_EXPORTS
+  DEP_FILE = CMakeFiles\crypto_openssl.dir\crypto_openssl.c.obj.d
   FLAGS = -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   INCLUDES = -isystem C:/vcpkg/installed/x64-windows/include
-  OBJECT_DIR = CMakeFiles\native_add.dir
-  OBJECT_FILE_DIR = CMakeFiles\native_add.dir
-  TARGET_COMPILE_PDB = CMakeFiles\native_add.dir\
-  TARGET_PDB = native_add.pdb
+  OBJECT_DIR = CMakeFiles\crypto_openssl.dir
+  OBJECT_FILE_DIR = CMakeFiles\crypto_openssl.dir
+  TARGET_COMPILE_PDB = CMakeFiles\crypto_openssl.dir\
+  TARGET_PDB = crypto_openssl.pdb
 
 
 # =============================================================================
-# Link build statements for SHARED_LIBRARY target native_add
+# Link build statements for SHARED_LIBRARY target crypto_openssl
 
 
 #############################################
-# Link the shared library native_add.dll
+# Link the shared library crypto_openssl.dll
 
-build native_add.dll native_add.lib: C_SHARED_LIBRARY_LINKER__native_add_Debug CMakeFiles/native_add.dir/native_add.c.obj | C$:/vcpkg/installed/x64-windows/debug/lib/libssl.lib C$:/vcpkg/installed/x64-windows/debug/lib/libcrypto.lib
+build crypto_openssl.dll crypto_openssl.lib: C_SHARED_LIBRARY_LINKER__crypto_openssl_Debug CMakeFiles/crypto_openssl.dir/crypto_openssl.c.obj | C$:/vcpkg/installed/x64-windows/debug/lib/libssl.lib C$:/vcpkg/installed/x64-windows/debug/lib/libcrypto.lib
   LANGUAGE_COMPILE_FLAGS = -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd
   LINK_LIBRARIES = C:/vcpkg/installed/x64-windows/debug/lib/libssl.lib  C:/vcpkg/installed/x64-windows/debug/lib/libcrypto.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames
-  OBJECT_DIR = CMakeFiles\native_add.dir
-  POST_BUILD = cmd.exe /C "cd /D C:\Users\majop\native_add\native_add\build-vscode\Debug && C:\Users\majop\scoop\shims\pwsh.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/majop/native_add/native_add/build-vscode/Debug/native_add.dll -installedDir C:/vcpkg/installed/x64-windows/debug/bin -OutVariable out"
+  OBJECT_DIR = CMakeFiles\crypto_openssl.dir
+  POST_BUILD = cmd.exe /C "cd /D C:\Users\majop\native_add\native_add\build-vscode\Debug && C:\Users\majop\scoop\shims\pwsh.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/majop/native_add/native_add/build-vscode/Debug/crypto_openssl.dll -installedDir C:/vcpkg/installed/x64-windows/debug/bin -OutVariable out"
   PRE_LINK = cd .
   RESTAT = 1
-  TARGET_COMPILE_PDB = CMakeFiles\native_add.dir\
-  TARGET_FILE = native_add.dll
-  TARGET_IMPLIB = native_add.lib
-  TARGET_PDB = native_add.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\crypto_openssl.dir\
+  TARGET_FILE = crypto_openssl.dll
+  TARGET_IMPLIB = crypto_openssl.lib
+  TARGET_PDB = crypto_openssl.pdb
 
 
 #############################################
@@ -106,7 +106,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build native_add: phony native_add.dll
+build crypto_openssl: phony crypto_openssl.dll
 
 # =============================================================================
 # Folder targets.
@@ -116,7 +116,7 @@ build native_add: phony native_add.dll
 #############################################
 # Folder: C:/Users/majop/native_add/native_add/build-vscode/Debug
 
-build all: phony native_add.dll
+build all: phony crypto_openssl.dll
 
 # =============================================================================
 # Built-in targets

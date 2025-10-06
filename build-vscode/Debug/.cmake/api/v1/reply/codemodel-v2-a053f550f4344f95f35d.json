@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "native_add_library",
+					"name" : "crypto_openssl_library",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "native_add::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-native_add-Debug-9479fb7fda3abd272134.json",
-					"name" : "native_add",
+					"id" : "crypto_openssl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-crypto_openssl-Debug-d8cb7daa6d91702cc503.json",
+					"name" : "crypto_openssl",
 					"projectIndex" : 0
 				}
 			]

@@ -1,4 +1,4 @@
-package com.example.native_add_example
+package com.example.crypto_openssl_example
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
-import 'package:native_add/native_add.dart' as native_add;
+import 'package:crypto_openssl/crypto_openssl.dart' as crypto_openssl;
 import 'dart:ffi';
 import 'package:ffi/ffi.dart';
 
@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
       final bufLen = strLen * 2;
       final buffer = malloc<UnsignedChar>(bufLen);
 
-      final resultLen = native_add.encrypt(string, strLen, buffer);
+      final resultLen = crypto_openssl.encrypt(string, strLen, buffer);
 
       if (resultLen > 0) {
         // Convert encrypted bytes to hex string
@@ -118,7 +118,7 @@ class _MyAppState extends State<MyApp> {
         byteLen,
       ); // Should be enough for decryption
 
-      final resultLen = native_add.decrypt(string, byteLen, buffer);
+      final resultLen = crypto_openssl.decrypt(string, byteLen, buffer);
 
       if (resultLen > 0) {
         final bytesOut = Uint8List(resultLen); // Use actual result length
@@ -150,7 +150,7 @@ class _MyAppState extends State<MyApp> {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Native Packages')),
+        appBar: AppBar(title: const Text('Crypto OpenSSL Example')),
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(10),

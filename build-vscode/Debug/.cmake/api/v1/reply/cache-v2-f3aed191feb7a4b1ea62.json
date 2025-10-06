@@ -499,7 +499,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/native_add_library"
+			"value" : "C:/Program Files (x86)/crypto_openssl_library"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -719,7 +719,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "native_add_library"
+			"value" : "crypto_openssl_library"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1454,7 +1454,7 @@
 			"value" : "C:/vcpkg/installed"
 		},
 		{
-			"name" : "native_add_LIB_DEPENDS",
+			"name" : "crypto_openssl_LIB_DEPENDS",
 			"properties" : 
 			[
 				{
@@ -1466,7 +1466,7 @@
 			"value" : "general;OpenSSL::SSL;general;OpenSSL::Crypto;"
 		},
 		{
-			"name" : "native_add_library_BINARY_DIR",
+			"name" : "crypto_openssl_library_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1478,7 +1478,7 @@
 			"value" : "C:/Users/majop/native_add/native_add/build-vscode/Debug"
 		},
 		{
-			"name" : "native_add_library_IS_TOP_LEVEL",
+			"name" : "crypto_openssl_library_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1490,7 +1490,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "native_add_library_SOURCE_DIR",
+			"name" : "crypto_openssl_library_SOURCE_DIR",
 			"properties" : 
 			[
 				{

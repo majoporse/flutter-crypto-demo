@@ -2,7 +2,7 @@ import 'dart:ffi';
 import 'dart:ffi' as ffi;
 import 'dart:io';
 
-import 'native_add_bindings_generated.dart';
+import 'crypto_openssl_bindings_generated.dart';
 
 int encrypt(
   ffi.Pointer<ffi.UnsignedChar> string,
@@ -16,7 +16,7 @@ int decrypt(
   ffi.Pointer<ffi.UnsignedChar> buffer,
 ) => _bindings.decrypt(string, strLen, buffer);
 
-const String _libName = 'native_add';
+const String _libName = 'crypto_openssl';
 
 /// The dynamic library in which the symbols for [NativeAddBindings] can be found.
 final DynamicLibrary _dylib = () {
@@ -33,4 +33,4 @@ final DynamicLibrary _dylib = () {
 }();
 
 /// The bindings to the native functions in [_dylib].
-final NativeAddBindings _bindings = NativeAddBindings(_dylib);
+final CryptoOpenSSLBindings _bindings = CryptoOpenSSLBindings(_dylib);

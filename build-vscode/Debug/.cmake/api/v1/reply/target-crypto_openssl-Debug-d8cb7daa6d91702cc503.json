@@ -2,13 +2,13 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "native_add.dll"
+			"path" : "crypto_openssl.dll"
 		},
 		{
-			"path" : "native_add.lib"
+			"path" : "crypto_openssl.lib"
 		},
 		{
-			"path" : "native_add.pdb"
+			"path" : "crypto_openssl.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -80,7 +80,7 @@
 					"define" : "DART_SHARED_LIB"
 				},
 				{
-					"define" : "native_add_EXPORTS"
+					"define" : "crypto_openssl_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -98,7 +98,7 @@
 			]
 		}
 	],
-	"id" : "native_add::@6890427a1f51a3e7e1df",
+	"id" : "crypto_openssl::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -124,8 +124,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "native_add",
-	"nameOnDisk" : "native_add.dll",
+	"name" : "crypto_openssl",
+	"nameOnDisk" : "crypto_openssl.dll",
 	"paths" : 
 	{
 		"build" : ".",
@@ -146,7 +146,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "native_add.c",
+			"path" : "crypto_openssl.c",
 			"sourceGroupIndex" : 0
 		}
 	],

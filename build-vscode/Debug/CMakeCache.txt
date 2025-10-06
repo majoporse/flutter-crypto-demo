@@ -75,7 +75,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/native_add_library
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/crypto_openssl_library
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/Llvm/x64/bin/lld-link.exe
@@ -119,7 +119,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=native_add_library
+CMAKE_PROJECT_NAME:STATIC=crypto_openssl_library
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.0.1
@@ -278,16 +278,16 @@ Z_VCPKG_PWSH_PATH:FILEPATH=C:/Users/majop/scoop/shims/pwsh.exe
 _VCPKG_INSTALLED_DIR:PATH=C:/vcpkg/installed
 
 //Dependencies for the target
-native_add_LIB_DEPENDS:STATIC=general;OpenSSL::SSL;general;OpenSSL::Crypto;
+crypto_openssl_LIB_DEPENDS:STATIC=general;OpenSSL::SSL;general;OpenSSL::Crypto;
 
 //Value Computed by CMake
-native_add_library_BINARY_DIR:STATIC=C:/Users/majop/native_add/native_add/build-vscode/Debug
+crypto_openssl_library_BINARY_DIR:STATIC=C:/Users/majop/native_add/native_add/build-vscode/Debug
 
 //Value Computed by CMake
-native_add_library_IS_TOP_LEVEL:STATIC=ON
+crypto_openssl_library_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-native_add_library_SOURCE_DIR:STATIC=C:/Users/majop/native_add/native_add/src
+crypto_openssl_library_SOURCE_DIR:STATIC=C:/Users/majop/native_add/native_add/src
 
 
 ########################
