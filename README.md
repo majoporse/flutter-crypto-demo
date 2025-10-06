@@ -1,4 +1,4 @@
-# native_add
+# FLUTTER CRYPTO DEMO
 
 Simple demo: Flutter app that calls native C code (OpenSSL) via FFI + CMake to encrypt/decrypt.
 
