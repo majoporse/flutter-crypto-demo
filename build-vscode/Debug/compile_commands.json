@@ -1,7 +1,7 @@
 [
 {
   "directory": "C:/Users/majop/native_add/native_add/build-vscode/Debug",
-  "command": "C:\\PROGRA~2\\MICROS~3\\2022\\BUILDT~1\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe -DDART_SHARED_LIB -Dnative_add_EXPORTS -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles\\native_add.dir\\native_add.c.obj -c C:\\Users\\majop\\native_add\\native_add\\src\\native_add.c",
+  "command": "C:\\PROGRA~2\\MICROS~3\\2022\\BUILDT~1\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe -DDART_SHARED_LIB -Dnative_add_EXPORTS -isystem C:/vcpkg/installed/x64-windows/include -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles\\native_add.dir\\native_add.c.obj -c C:\\Users\\majop\\native_add\\native_add\\src\\native_add.c",
   "file": "C:\\Users\\majop\\native_add\\native_add\\src\\native_add.c"
 }
 ]

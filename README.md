@@ -1,92 +1,56 @@
 # native_add
 
-A new Flutter FFI plugin project.
+Simple demo: Flutter app that calls native C code (OpenSSL) via FFI + CMake to encrypt/decrypt.
 
-## Getting Started
+## Prerequisites
 
-This project is a starting point for a Flutter
-[FFI plugin](https://flutter.dev/to/ffi-package),
-a specialized package that includes native code directly invoked with Dart FFI.
+- Flutter (stable)
+- Android SDK + NDK
+- CMake 3.10+
+- OpenSSL static libs and headers placed under `src/openssl/<abi>/` (you said these are included)
 
-## Project structure
+## Quick build & install (example/)
 
-This template uses the following structure:
+1. flutter clean
+2. flutter pub get
 
-* `src`: Contains the native source code, and a CmakeFile.txt file for building
-  that source code into a dynamic library.
+## For a real ARM device (most phones — recommended)
 
-* `lib`: Contains the Dart code that defines the API of the plugin, and which
-  calls into the native code using `dart:ffi`.
+- Ensure `android/build.gradle` `abiFilters` includes the ABI you built OpenSSL for (e.g. `'arm64-v8a'`).
+- Build and install:
+  - flutter build apk --target-platform android-arm64 --debug
+  - adb install -r build/app/outputs/flutter-apk/app-debug.apk
 
-* platform folders (`android`, `ios`, `windows`, etc.): Contains the build files
-  for building and bundling the native code library with the platform application.
+## For emulator (x86_64)
 
-## Building and bundling native code
+- flutter build apk --debug
+- adb install -r build/app/outputs/flutter-apk/app-debug.apk
 
-The `pubspec.yaml` specifies FFI plugins as follows:
+## Run for debugging
 
-```yaml
-  plugin:
-    platforms:
-      some_platform:
-        ffiPlugin: true
-```
+- flutter run -d <device-id>
+- View native prints: flutter logs (or adb logcat)
 
-This configuration invokes the native build for the various target platforms
-and bundles the binaries in Flutter applications using these FFI plugins.
+## Notes / tips
 
-This can be combined with dartPluginClass, such as when FFI is used for the
-implementation of one platform in a federated plugin:
+- Allocate output buffer >= input + AES block size (e.g. input + 16).
+- Always use the integer returned by the C function as the actual output length.
+- If native prints don't appear, fflush(stdout) or log to stderr/file from C.
+- If you get linker errors, verify `src/openssl/<abi>/` contains libssl.a and libcrypto.a matching the target ABI.
 
-```yaml
-  plugin:
-    implements: some_other_plugin
-    platforms:
-      some_platform:
-        dartPluginClass: SomeClass
-        ffiPlugin: true
-```
+## Windows (recommended if OpenSSL not installed)
+If OpenSSL isn't installed on Windows, I recommend using vcpkg — this is the method that worked for me.
 
-A plugin can have both FFI and method channels:
+Quick steps:
+1. Clone and bootstrap vcpkg:
+   - git clone https://github.com/microsoft/vcpkg.git
+   - .\vcpkg\bootstrap-vcpkg.bat
+2. Install OpenSSL for your target triplet (example x64):
+   - .\vcpkg\vcpkg.exe install openssl:x64-windows
+3. Use vcpkg with CMake:
+   - Add -DCMAKE_TOOLCHAIN_FILE=C:/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake to your CMake invocation
+   - Or copy the built headers/libs into `src/openssl/<abi>/` matching your ABI
 
-```yaml
-  plugin:
-    platforms:
-      some_platform:
-        pluginClass: SomeName
-        ffiPlugin: true
-```
+## License
 
-The native build systems that are invoked by FFI (and method channel) plugins are:
-
-* For Android: Gradle, which invokes the Android NDK for native builds.
-  * See the documentation in android/build.gradle.
-* For iOS and MacOS: Xcode, via CocoaPods.
-  * See the documentation in ios/native_add.podspec.
-  * See the documentation in macos/native_add.podspec.
-* For Linux and Windows: CMake.
-  * See the documentation in linux/CMakeLists.txt.
-  * See the documentation in windows/CMakeLists.txt.
-
-## Binding to native code
-
-To use the native code, bindings in Dart are needed.
-To avoid writing these by hand, they are generated from the header file
-(`src/native_add.h`) by `package:ffigen`.
-Regenerate the bindings by running `dart run ffigen --config ffigen.yaml`.
-
-## Invoking native code
-
-Very short-running native functions can be directly invoked from any isolate.
-For example, see `sum` in `lib/native_add.dart`.
-
-Longer-running functions should be invoked on a helper isolate to avoid
-dropping frames in Flutter applications.
-For example, see `sumAsync` in `lib/native_add.dart`.
-
-## Flutter help
-
-For help getting started with Flutter, view our
-[online documentation](https://docs.flutter.dev), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+- See repository files for license details.

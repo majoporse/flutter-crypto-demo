@@ -18,7 +18,9 @@
 		[
 			"_add_library",
 			"add_library",
-			"target_compile_definitions"
+			"target_link_libraries",
+			"target_compile_definitions",
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -45,7 +47,19 @@
 			{
 				"command" : 2,
 				"file" : 1,
+				"line" : 40,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
 				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 39,
 				"parent" : 0
 			}
 		]
@@ -62,11 +76,19 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"define" : "DART_SHARED_LIB"
 				},
 				{
 					"define" : "native_add_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "C:/vcpkg/installed/x64-windows/include"
 				}
 			],
 			"language" : "C",
@@ -84,6 +106,16 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "C:\\vcpkg\\installed\\x64-windows\\debug\\lib\\libssl.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "C:\\vcpkg\\installed\\x64-windows\\debug\\lib\\libcrypto.lib",
+				"role" : "libraries"
 			},
 			{
 				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames",
