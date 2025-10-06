@@ -56,7 +56,6 @@ class _MyAppState extends State<MyApp> {
       final resultLen = native_add.encrypt(string, strLen, buffer);
 
       if (resultLen > 0) {
-
         // Convert encrypted bytes to hex string
         final bytesOut = Uint8List(resultLen);
         for (int i = 0; i < resultLen; i++) {
@@ -98,6 +97,14 @@ class _MyAppState extends State<MyApp> {
 
       for (int i = 0; i < text.length; i += 2) {
         final byteStr = text.substring(i, i + 2);
+        try {
+          bytes[i ~/ 2] = int.parse(byteStr, radix: 16);
+        } catch (e) {
+          setState(() {
+            _decryptedResult = 'Invalid hex string';
+          });
+          return;
+        }
         bytes[i ~/ 2] = int.parse(byteStr, radix: 16);
       }
 
