@@ -1,0 +1,3 @@
+C:/Users/majop/native_add/native_add/build-vscode/Debug/CMakeFiles/native_add.dir
+C:/Users/majop/native_add/native_add/build-vscode/Debug/CMakeFiles/edit_cache.dir
+C:/Users/majop/native_add/native_add/build-vscode/Debug/CMakeFiles/rebuild_cache.dir
